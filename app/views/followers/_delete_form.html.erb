@@ -1,0 +1,4 @@
+<%= form_for follower, method: :delete, remote: true do |f| %>
+  <%= f.hidden_field :user_id %>
+  <%= f.submit 'Following', class: "btn btn-sm btn-unsubscribe" %>
+<% end %>

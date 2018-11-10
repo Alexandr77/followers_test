@@ -1,0 +1,4 @@
+$("#user_follower_changeable_<%= @user.id %>")
+  .replaceWith(
+    "<%= j render partial: 'users/changeable', locals: { user: @user } %>"
+  )

@@ -1,0 +1,21 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin button($bg_color, $text_color, $border_color) {
+    background-color: $bg_color;
+    color: $text_color;
+    border-color: $border_color;
+}
+
+input.btn-unsubscribe {
+  @include button(#28a745, #FFFFFF, #28a745);
+  &:hover {
+    @include button(#FF0000, #000000, #FF0000);
+  }
+}
+
+body {
+  line-height: 3.5
+}
+
