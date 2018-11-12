@@ -8,13 +8,13 @@
     border-color: $border_color;
 }
 
-input.btn-unsubscribe {
+input.btn-following {
   @include button(#28a745, #FFFFFF, #28a745);
-  &:hover {
-    @include button(#FF0000, #000000, #FF0000);
-  }
 }
 
+input.btn-unsubscribe {
+  @include button(#FF0000, #FFFFFF, #FF0000);
+}
 body {
   line-height: 3.5
 }
