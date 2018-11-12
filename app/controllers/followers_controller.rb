@@ -2,8 +2,7 @@ class FollowersController < ApplicationController
 
   def create
     begin
-      current_user.subscriptions.create user_id: user.id
-      user.reload
+      user.followers.create follower_id: current_user.id
     rescue  => e
       render_error e
     end
@@ -11,8 +10,7 @@ class FollowersController < ApplicationController
 
   def destroy
     begin
-      current_user.subscriptions.find(params[:id]).destroy
-      user.reload
+      user.followers.find(params[:id]).destroy
     rescue => e
       render_error e
     end

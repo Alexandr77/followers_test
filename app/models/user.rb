@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   belongs_to :group, inverse_of: :users
   has_many :followers, inverse_of: :user
-  has_many :subscriptions, foreign_key: 'follower_id', class_name: 'Follower'
 
   validates :group, :name, presence: true
 
