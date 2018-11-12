@@ -1,5 +1,7 @@
 class FollowersController < ApplicationController
 
+  helper_method :user
+
   def create
     begin
       user.followers.create follower_id: current_user.id

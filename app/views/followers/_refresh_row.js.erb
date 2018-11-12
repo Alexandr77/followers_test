@@ -1,4 +1,14 @@
-$("#user_follower_changeable_<%= @user.id %>")
+$("#user_follower_changeable_<%= user.id %>")
   .replaceWith(
-    "<%= j render partial: 'users/changeable', locals: { user: @user } %>"
+    "<%= j render partial: 'users/changeable', locals: { user: user } %>"
   )
+
+function addEventToSwithUnsubscribeButtons(elem, action, display_prefix) {
+  elem[action](() => {
+    $(elem).css('display', 'none');
+    id = (elem).attr('id').replace( /^\D+/g, '');
+    $("#" + display_prefix + "_" + id).css('display', 'inline');
+  });
+}
+addEventToSwithUnsubscribeButtons($('#ff_<%= user.id %>'), 'mouseenter', 'fd');
+addEventToSwithUnsubscribeButtons($('#fd_<%= user.id %>'), 'mouseleave', 'ff');
